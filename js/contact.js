@@ -5,7 +5,7 @@ function Contact()
         this.id = id;
     }
 
-    this.setEmail = function (email){
+    this.setEmail = function (email) {
         this.email = email;
     }
 
@@ -17,7 +17,6 @@ function Contact()
         }  
         else
         {
-            
             var newName = arr[0].charAt(0) + ".";
             for(var i = 1; i < arr.length - 1 ; i++)
                 newName += arr[i].charAt(0) + ".";
@@ -50,16 +49,3 @@ function Contact()
         return this.phone;
     }
 }
-
-
-
-// var cont = new Contact();
-// cont.setId('1223');
-// cont.setName('Mohamed skar ali');
-// cont.setEmail('mm@gm.com');
-// cont.setPhone('01157347777');
-
-// console.log(cont.getId(), cont.getName(), cont.getEmail(), cont.getPhone());
-
-  
- 

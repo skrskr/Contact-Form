@@ -44,8 +44,8 @@ form input[type = "submit"] {
     border-radius: 7px;
     font-size: 16px;
     border: none;
-   cursor: pointer;
-   margin-left: 70%;
+    cursor: pointer;
+    margin-left: 70%;
 }
 
 .error-message{
@@ -86,8 +86,8 @@ table tr td{
     font-weight: bold;
 }
 
-table tr td img{
-    text-align: center
+table tr td img {    
+    cursor: pointer;
 }
 
 table tr:nth-child(even){
