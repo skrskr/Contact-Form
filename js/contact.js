@@ -6,12 +6,7 @@ function Contact()
     }
 
     this.setEmail = function (email){
-        if(validateEmail(email))
-        {
-            this.email = email;
-            return true;
-        }
-        return false;
+        this.email = email;
     }
 
     this.setName = function(name) {
@@ -26,17 +21,13 @@ function Contact()
             var newName = arr[0].charAt(0) + ".";
             for(var i = 1; i < arr.length - 1 ; i++)
                 newName += arr[i].charAt(0) + ".";
-        
             newName += arr[arr.length -1];
             this.name = newName;
         }
     }
 
     this.setPhone = function (phone) {
-        if(phone.length < 11)
-            return false;
         this.phone = phone;
-        return true;
     }
 
     this.getId = function ()
@@ -57,12 +48,6 @@ function Contact()
     this.getPhone = function () 
     {
         return this.phone;
-    }
-
-    function validateEmail(email) 
-    {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(email);
     }
 }
 

@@ -15,15 +15,18 @@
         <div class="data-form">
             <form action="#">
                 <label>Name</label>
-                <input type="text" placeholder="Enter Your Name...">
+                <input id = "nameInput" type="text" placeholder="Enter Your Name...">
+                <p class="error-message" id ="nameErrorMessage"></p>
 
                 <label>Email</label>
-                <input type="email" placeholder="Enter Your Email...">
+                <input id = "emailInput" type="email" placeholder="Enter Your Email...">
+                <p class="error-message" id ="emailErrorMessage"></p>
 
                 <label>Phone</label>
-                <input type="text" placeholder="Enter Your Phone...">
+                <input id = "phoneInput" type="text" placeholder="Enter Your Phone...">
+                <p class="error-message" id ="phoneErrorMessage"></p>
 
-                <input type="submit" value="Submit">
+                <input id = "submitBtn" type="submit" value="Submit">
             </form>
         </div>
 
@@ -58,5 +61,6 @@
     <script src="./js/contact.js"></script>
     <script src="./js/contactList.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/utility.js"></script>
 </body>
 </html>
