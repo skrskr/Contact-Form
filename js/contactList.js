@@ -45,6 +45,12 @@ function ContactList()
         var newCotnact = this.contacts.filter( contact => contact.id === id);
         return newCotnact;
     }
+
+    this.setContacts = function(contacts)
+    {
+        this.contacts = contacts;
+    }
+    
     this.getAllContacts = function ()
     {
         return this.contacts;

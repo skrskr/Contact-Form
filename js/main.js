@@ -22,6 +22,42 @@ submitBtn.addEventListener('click',function(event) {
     validateInputs();
 });
 
+const CONTACTS_KEY = "contacts";
+
+// Retrive data from localStorage
+window.addEventListener('load',function() {
+//    localStorage.clear();
+    var contacts = (this.localStorage.getItem(CONTACTS_KEY) ? JSON.parse(localStorage.getItem(CONTACTS_KEY)) : []);
+    
+    if(contacts != null) {
+        contactList.setContacts(objectTypeToContactType(contacts));
+        refreshTable();
+    }
+    
+        
+});
+
+
+function objectTypeToContactType(contacts) {
+    var len = contacts.length;
+    var conts = [];
+    for(var i = 0; i < len; i++)
+    {
+        var cnt = new Contact();
+        cnt.setId(contacts[i]['id']);
+        cnt.setName(contacts[i]['name']);
+        cnt.setEmail(contacts[i]['email']);
+        cnt.setPhone(contacts[i]['phone']);
+        conts.push(cnt);
+    }
+    return conts;
+}
+
+// Store data in localStorage
+window.addEventListener('unload',function() {
+    localStorage.setItem(CONTACTS_KEY,JSON.stringify(contactList.getAllContacts()));
+});
+
 function validateInputs() {
     var name = nameInput.value;
     var email = emailInput.value;
@@ -161,7 +197,7 @@ function creatTableRows() {
         var cell4 = row.insertCell(3);
         var cell5 = row.insertCell(4);
         
-        var currentContact = contacts[i];
+        var currentContact = (contacts[i]);
         cell1.innerHTML = currentContact.getName();
         cell2.innerHTML = currentContact.getEmail();
         cell3.innerHTML = currentContact.getPhone();
